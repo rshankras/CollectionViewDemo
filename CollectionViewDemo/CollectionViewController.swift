@@ -15,6 +15,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     var fruits:[Fruit] = []
     var sections:[String] = []
     
+    var previouslySelectedCell:UICollectionViewCell?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +71,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+        previouslySelectedCell?.contentView.backgroundColor = nil
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
@@ -133,7 +135,15 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        
+        if let previouslySelectedCell = previouslySelectedCell{
+            if !editing {
+                previouslySelectedCell.contentView.backgroundColor = nil
+            }
+        }
+        
         cell?.contentView.backgroundColor = UIColor.blueColor()
+        previouslySelectedCell = cell
     }
     
     override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
@@ -194,6 +204,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         if editing {
             collectionView?.allowsMultipleSelection = true
             navigationController?.setToolbarHidden(false, animated: true)
+            previouslySelectedCell?.contentView.backgroundColor = nil
         } else {
             navigationController?.setToolbarHidden(true, animated: true)
         }
