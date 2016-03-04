@@ -85,12 +85,11 @@
 		4869D3B11B53720D00F1F123 /* CollectionViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				48EBB7181B5419DD00E76614 /* App */,
-				48EBB71A1B5419F100E76614 /* Model */,
-				48EBB71B1B5419F900E76614 /* View */,
-				48EBB7191B5419E600E76614 /* Controller */,
-				48EBB70B1B53E74D00E76614 /* Resources */,
-				4869D3B21B53720D00F1F123 /* Supporting Files */,
+				48EBB7181B5419DD00E76614 /* app */,
+				48EBB71A1B5419F100E76614 /* model */,
+				48EBB71B1B5419F900E76614 /* view */,
+				48EBB7191B5419E600E76614 /* controller */,
+				48EBB70B1B53E74D00E76614 /* resources */,
 			);
 			path = CollectionViewDemo;
 			sourceTree = "<group>";
@@ -120,48 +119,49 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		48EBB70B1B53E74D00E76614 /* Resources */ = {
+		48EBB70B1B53E74D00E76614 /* resources */ = {
 			isa = PBXGroup;
 			children = (
 				4869D3B81B53720D00F1F123 /* Main.storyboard */,
 				4869D3BB1B53720D00F1F123 /* Images.xcassets */,
 				4869D3BD1B53720D00F1F123 /* LaunchScreen.xib */,
 				48EBB70C1B53E76000E76614 /* fruits.plist */,
+				4869D3B21B53720D00F1F123 /* Supporting Files */,
 			);
-			name = Resources;
+			name = resources;
 			sourceTree = "<group>";
 		};
-		48EBB7181B5419DD00E76614 /* App */ = {
+		48EBB7181B5419DD00E76614 /* app */ = {
 			isa = PBXGroup;
 			children = (
 				4869D3B41B53720D00F1F123 /* AppDelegate.swift */,
 			);
-			name = App;
+			name = app;
 			sourceTree = "<group>";
 		};
-		48EBB7191B5419E600E76614 /* Controller */ = {
+		48EBB7191B5419E600E76614 /* controller */ = {
 			isa = PBXGroup;
 			children = (
 				4889851C1B53BB5D0040FAD2 /* CollectionViewController.swift */,
 			);
-			name = Controller;
+			name = controller;
 			sourceTree = "<group>";
 		};
-		48EBB71A1B5419F100E76614 /* Model */ = {
+		48EBB71A1B5419F100E76614 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				48EBB70E1B53EAFC00E76614 /* Fruit.swift */,
 			);
-			name = Model;
+			name = model;
 			sourceTree = "<group>";
 		};
-		48EBB71B1B5419F900E76614 /* View */ = {
+		48EBB71B1B5419F900E76614 /* view */ = {
 			isa = PBXGroup;
 			children = (
 				48EBB7121B53F51F00E76614 /* FruitCollectionViewCell.swift */,
 				484B1EC71B54EE3400E668B9 /* CollectionHeaderView.swift */,
 			);
-			name = View;
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

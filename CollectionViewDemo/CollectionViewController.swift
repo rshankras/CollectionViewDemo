@@ -83,13 +83,11 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     // MARK: UICollectionViewDataSource
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        //#warning Incomplete method implementation -- Return the number of sections
         return sections.count
     }
     
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //#warning Incomplete method implementation -- Return the number of items in the section
         let fruits = fruitsForSection(section)
         return fruits.count
     }
@@ -178,10 +176,15 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
             // delete fruit model
             
             for item in deletedFruits {
-                // remove item
+                let index = fruits.indexOf({ (fruit) -> Bool in
+                    item.name == fruit.name
+                })
+                if let index = index {
+                    fruits.removeAtIndex(index)
+                }
             }
             
-           //collectionView?.deleteItemsAtIndexPaths(indexpaths)
+           collectionView?.deleteItemsAtIndexPaths(indexpaths)
         }
     }
     
