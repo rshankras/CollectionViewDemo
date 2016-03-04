@@ -165,8 +165,6 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         if let indexpaths = indexpaths {
             
             for item  in indexpaths {
-                _ = collectionView!.cellForItemAtIndexPath(item )
-                
                 collectionView?.deselectItemAtIndexPath(item, animated: true)
                 // fruits for section
                 let sectionfruits = fruitsForSection(item.section)
