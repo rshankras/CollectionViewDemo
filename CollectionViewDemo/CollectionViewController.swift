@@ -44,7 +44,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
                         let group = dict["group"] as! String
                         
                         let fruit = Fruit(name: name, section: group)
-                        if !contains(sections, group)
+                        if !sections.contains(group)
                         {
                             sections.append(group)
                         }
@@ -72,8 +72,8 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
 
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        var flag = true
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        let flag = true
         if self.editing {
             return false
         }
@@ -167,9 +167,9 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         if let indexpaths = indexpaths {
             
             for item  in indexpaths {
-                let cell = collectionView!.cellForItemAtIndexPath(item as! NSIndexPath)
+                _ = collectionView!.cellForItemAtIndexPath(item )
                 
-                collectionView?.deselectItemAtIndexPath(item as? NSIndexPath, animated: true)
+                collectionView?.deselectItemAtIndexPath(item, animated: true)
                 // fruits for section
                 let sectionfruits = fruitsForSection(item.section)
                 deletedFruits.append(sectionfruits[item.row])
